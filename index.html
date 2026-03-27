@@ -924,74 +924,35 @@
 ══════════════════════════════════════ */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 1rem;
     }
 
     .cert-card {
       background: var(--card);
       border: 1.5px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all .25s;
-    }
-
-    .cert-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--orange);
-      box-shadow: 0 12px 35px rgba(255, 106, 0, .15);
-    }
-
-    .cert-preview {
-      position: relative;
-      width: 100%;
-      height: 120px;
-      overflow: hidden;
-      background: var(--bg3);
-      flex-shrink: 0;
-    }
-
-    .cert-preview img {
-      width: 100%;
-      height: 200%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform .4s ease;
-    }
-
-    .cert-card:hover .cert-preview img {
-      transform: scale(1.05);
-    }
-
-    .cert-preview-fade {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 40px;
-      background: linear-gradient(to top, var(--card), transparent);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .cert-body {
-      padding: 1.1rem 1.3rem 1.3rem;
+      border-radius: 16px;
+      padding: 1.3rem;
       display: flex;
       gap: .9rem;
       align-items: flex-start;
+      transition: all .2s;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--orange);
+      box-shadow: 0 8px 25px rgba(255, 106, 0, .12);
     }
 
     .cert-ico {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
       flex-shrink: 0;
     }
 
@@ -1013,7 +974,7 @@
 
     .cert-name {
       font-family: 'Fraunces', serif;
-      font-size: .88rem;
+      font-size: .9rem;
       font-weight: 700;
       line-height: 1.4;
       margin-bottom: .25rem;
@@ -1022,7 +983,7 @@
 
     .cert-iss {
       color: var(--muted);
-      font-size: .76rem;
+      font-size: .77rem;
     }
 
     .cert-dt {
@@ -1030,24 +991,6 @@
       font-size: .7rem;
       font-weight: 700;
       margin-top: .2rem;
-    }
-
-    .cert-view-hint {
-      display: inline-flex;
-      align-items: center;
-      gap: .3rem;
-      margin-top: .5rem;
-      font-size: .72rem;
-      font-weight: 700;
-      color: var(--orange);
-      opacity: 0;
-      transform: translateX(-5px);
-      transition: all .25s;
-    }
-
-    .cert-card:hover .cert-view-hint {
-      opacity: 1;
-      transform: translateX(0);
     }
 
     /* ══════════════════════════════════════
@@ -1900,108 +1843,59 @@
       <h2 class="sec-title reveal"><span>Certifications</span></h2>
       <div class="certs-grid">
         <a href="https://drive.google.com/file/d/1mclqSCMGG0aPnOAdm-as5INMjs5cwZBq/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://drive.google.com/thumbnail?id=1mclqSCMGG0aPnOAdm-as5INMjs5cwZBq&sz=w600" alt="AWS Cloud Architecting Certificate" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-aws">☁️</div>
-            <div>
-              <div class="cert-name">AWS Academy Graduate – Cloud Architecting</div>
-              <div class="cert-iss">AWS Academy</div>
-              <div class="cert-dt">Jan 2026</div>
-              <div class="cert-view-hint">View Certificate →</div>
-            </div>
+          <div class="cert-ico ico-aws">☁️</div>
+          <div>
+            <div class="cert-name">AWS Academy Graduate – Cloud Architecting</div>
+            <div class="cert-iss">AWS Academy</div>
+            <div class="cert-dt">Jan 2026</div>
           </div>
         </a>
         <a href="https://www.credly.com/badges/722df5c5-30ec-4e9c-a8a1-5f12e3024fcb/public_url" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://images.credly.com/size/680x680/images/9945dfcb-1cee-4e1b-85d9-3e1e22f7e4e9/image.png" alt="Google Cloud Skill Badge" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-gcp">🔵</div>
-            <div>
-              <div class="cert-name">Store, Process &amp; Manage Data – Command Line</div>
-              <div class="cert-iss">Google Cloud Skill Badge</div>
-              <div class="cert-dt">Jan 2026</div>
-              <div class="cert-view-hint">View Badge →</div>
-            </div>
+          <div class="cert-ico ico-gcp">🔵</div>
+          <div>
+            <div class="cert-name">Store, Process &amp; Manage Data – Command Line</div>
+            <div class="cert-iss">Google Cloud Skill Badge</div>
+            <div class="cert-dt">Jan 2026</div>
           </div>
         </a>
         <a href="https://www.credly.com/badges/60fac8f9-13e3-4d95-9e0a-0cc296cb88e8/public_url" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://images.credly.com/size/680x680/images/b326b3de-e694-4870-b018-9e1e4a5b6db1/image.png" alt="BigQuery Skill Badge" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-gcp">🔵</div>
-            <div>
-              <div class="cert-name">Streaming Analytics into BigQuery</div>
-              <div class="cert-iss">Google Cloud Skill Badge</div>
-              <div class="cert-dt">Dec 2025</div>
-              <div class="cert-view-hint">View Badge →</div>
-            </div>
+          <div class="cert-ico ico-gcp">🔵</div>
+          <div>
+            <div class="cert-name">Streaming Analytics into BigQuery</div>
+            <div class="cert-iss">Google Cloud Skill Badge</div>
+            <div class="cert-dt">Dec 2025</div>
           </div>
         </a>
         <a href="https://www.credly.com/badges/ae5ebd45-78f7-4fab-92cd-52440e673e01/public_url" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://images.credly.com/size/680x680/images/88316fe8-5651-4e61-a6be-5be1558f049e/image.png" alt="Kubernetes Badge" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-gcp">🔵</div>
-            <div>
-              <div class="cert-name">Manage Kubernetes in Google Cloud</div>
-              <div class="cert-iss">Google Cloud Skill Badge</div>
-              <div class="cert-dt">Dec 2025</div>
-              <div class="cert-view-hint">View Badge →</div>
-            </div>
+          <div class="cert-ico ico-gcp">🔵</div>
+          <div>
+            <div class="cert-name">Manage Kubernetes in Google Cloud</div>
+            <div class="cert-iss">Google Cloud Skill Badge</div>
+            <div class="cert-dt">Dec 2025</div>
           </div>
         </a>
         <a href="https://drive.google.com/file/d/1I3pWYTcQLUyr_ACY18nXt9R84k4_PE7B/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://drive.google.com/thumbnail?id=1I3pWYTcQLUyr_ACY18nXt9R84k4_PE7B&sz=w600" alt="NPTEL Certificate" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-np">🟠</div>
-            <div>
-              <div class="cert-name">Privacy &amp; Security in Online Social Media</div>
-              <div class="cert-iss">NPTEL Online Certification</div>
-              <div class="cert-dt">Apr 2025</div>
-              <div class="cert-view-hint">View Certificate →</div>
-            </div>
+          <div class="cert-ico ico-np">🟠</div>
+          <div>
+            <div class="cert-name">Privacy &amp; Security in Online Social Media</div>
+            <div class="cert-iss">NPTEL Online Certification</div>
+            <div class="cert-dt">Apr 2025</div>
           </div>
         </a>
         <a href="https://drive.google.com/file/d/1G13E22-XUNBpD1YXJWl9RMTsjJhW2RYB/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://drive.google.com/thumbnail?id=1G13E22-XUNBpD1YXJWl9RMTsjJhW2RYB&sz=w600" alt="OOP Certificate" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-ot">💡</div>
-            <div>
-              <div class="cert-name">Object Oriented Programming</div>
-              <div class="cert-iss">IAM Neo Platform</div>
-              <div class="cert-dt">Dec 2024</div>
-              <div class="cert-view-hint">View Certificate →</div>
-            </div>
+          <div class="cert-ico ico-ot">💡</div>
+          <div>
+            <div class="cert-name">Object Oriented Programming</div>
+            <div class="cert-iss">IAM Neo Platform</div>
+            <div class="cert-dt">Dec 2024</div>
           </div>
         </a>
         <a href="https://drive.google.com/file/d/1yeEBc4MXUE7zkTdmbS6Pyp4WDfl_kqWr/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-preview">
-            <img src="https://drive.google.com/thumbnail?id=1yeEBc4MXUE7zkTdmbS6Pyp4WDfl_kqWr&sz=w600" alt="freeCodeCamp Certificate" loading="lazy">
-            <div class="cert-preview-fade"></div>
-          </div>
-          <div class="cert-body">
-            <div class="cert-ico ico-ot">🎨</div>
-            <div>
-              <div class="cert-name">Responsive Web Designing</div>
-              <div class="cert-iss">freeCodeCamp</div>
-              <div class="cert-dt">Oct 2023</div>
-              <div class="cert-view-hint">View Certificate →</div>
-            </div>
+          <div class="cert-ico ico-ot">🎨</div>
+          <div>
+            <div class="cert-name">Responsive Web Designing</div>
+            <div class="cert-iss">freeCodeCamp</div>
+            <div class="cert-dt">Oct 2023</div>
           </div>
         </a>
       </div>

@@ -900,6 +900,38 @@
       margin-bottom: .3rem;
     }
 
+    /* training side-by-side layout */
+    .training-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .training-cert-preview {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 8px 30px var(--shadow);
+      transition: transform .3s, box-shadow .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card);
+    }
+
+    .training-cert-preview:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 50px rgba(255, 106, 0, 0.18);
+    }
+
+    .training-cert-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
     .grade-badge {
       display: inline-flex;
       align-items: center;
@@ -1569,6 +1601,10 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .training-layout {
+        grid-template-columns: 1fr;
+      }
+
       .proj-grid {
         grid-template-columns: 1fr;
       }
@@ -1816,20 +1852,24 @@
     <div class="sec-inner">
       <div class="sec-kicker reveal">Experience</div>
       <h2 class="sec-title reveal"><span>Training</span> &amp; Learning</h2>
-      <div class="tl-card reveal">
-        <div class="tl-top">
-          <div class="tl-role">Linux Fundamentals</div>
-          <span class="tl-date">Jun – Jul 2025</span>
+      <div class="training-layout reveal">
+        <div class="tl-card" style="margin:0;max-width:none;">
+          <div class="tl-top">
+            <div class="tl-role">Linux Fundamentals</div>
+            <span class="tl-date">Jun – Jul 2025</span>
+          </div>
+          <div class="tl-org">Lovely Professional University</div>
+          <ul class="tl-list">
+            <li>Hands-on training covering Linux commands, shell usage, file system structure &amp; permission management.</li>
+            <li>Core administration: process control, basic networking, and introductory shell scripting.</li>
+            <li>Practical CLI task solving strengthening system operations and resource control.</li>
+          </ul>
+          <div class="grade-badge">🏅 Grade B Achieved</div>
+          <a href="https://drive.google.com/file/d/1A0dOj2xv0_2-3UfOiBbkBe7f4XJZsvrF/view?usp=drive_link" target="_blank" style="display:inline-block;margin-top:.8rem;color:var(--orange);font-size:.95rem;font-weight:600;text-decoration:none">📄 View Certificate →</a>
         </div>
-        <div class="tl-org">Lovely Professional University</div>
-        <ul class="tl-list">
-          <li>Hands-on training covering Linux commands, shell usage, file system structure &amp; permission management.
-          </li>
-          <li>Core administration: process control, basic networking, and introductory shell scripting.</li>
-          <li>Practical CLI task solving strengthening system operations and resource control.</li>
-        </ul>
-        <div class="grade-badge">🏅 Grade B Achieved</div>
-        <a href="https://drive.google.com/file/d/1A0dOj2xv0_2-3UfOiBbkBe7f4XJZsvrF/view?usp=drive_link" target="_blank" style="display:inline-block;margin-top:.8rem;color:var(--orange);font-size:.85rem;font-weight:600;text-decoration:none">📄 View Certificate →</a>
+        <a href="https://drive.google.com/file/d/1A0dOj2xv0_2-3UfOiBbkBe7f4XJZsvrF/view?usp=drive_link" target="_blank" class="training-cert-preview">
+          <img src="training-certificate.jpeg" alt="Linux Fundamentals Training Certificate">
+        </a>
       </div>
     </div>
   </section>

@@ -8,6 +8,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <style>
     /* ══════════════════════════════════════
    TOKENS
@@ -621,76 +622,99 @@
     }
 
     /* ══════════════════════════════════════
-   SKILLS
+   SKILLS — INDIVIDUAL ICON CARDS
 ══════════════════════════════════════ */
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
 
-    .sk-box {
-      background: var(--card);
-      border: 1.5px solid var(--border);
-      border-radius: 18px;
-      padding: 1.5rem;
-      transition: transform .2s, border-color .2s, box-shadow .2s, background .35s;
-    }
-
-    .sk-box:hover {
-      transform: translateY(-5px);
-      border-color: var(--orange);
-      box-shadow: 0 10px 30px rgba(255, 106, 0, .12);
-    }
-
-    .sk-ico {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
+    .skill-category-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      background: var(--orange-lt);
-      transition: background .35s;
+      gap: 0.5rem;
     }
 
-    [data-theme="dark"] .sk-ico {
-      background: rgba(255, 106, 0, .12);
+    .skill-category-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
-    .sk-head {
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: .8rem;
-    }
-
-    .pills {
+    .skill-icons-row {
       display: flex;
       flex-wrap: wrap;
-      gap: .4rem;
+      gap: 1rem;
     }
 
-    .pill {
-      padding: .32rem .8rem;
-      border-radius: 6px;
-      font-size: .88rem;
-      font-weight: 500;
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-b);
-      color: var(--pill-text);
-      transition: all .2s;
+    .skill-icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 105px;
+      height: 105px;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      transition: all .28s cubic-bezier(.4, 0, .2, 1);
       cursor: default;
+      position: relative;
+      overflow: hidden;
     }
 
-    .pill:hover {
-      background: var(--orange);
-      color: #fff;
+    .skill-icon-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,106,0,0.06), transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .skill-icon-card:hover {
+      transform: translateY(-6px) scale(1.04);
       border-color: var(--orange);
+      box-shadow: 0 12px 35px rgba(255, 106, 0, 0.15);
+    }
+
+    .skill-icon-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-icon-card i,
+    .skill-icon-card .skill-emoji {
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+      transition: transform .3s;
+    }
+
+    .skill-icon-card:hover i,
+    .skill-icon-card:hover .skill-emoji {
+      transform: scale(1.15);
+    }
+
+    .skill-icon-card .skill-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text2);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      line-height: 1.2;
+    }
+
+    .skill-icon-card:hover .skill-label {
+      color: var(--orange);
     }
 
     /* ══════════════════════════════════════
@@ -1751,51 +1775,141 @@
       <div class="sec-kicker reveal">Expertise</div>
       <h2 class="sec-title reveal">Skills &amp; <span>Technologies</span></h2>
       <div class="skills-grid">
-        <div class="sk-box reveal">
-          <div class="sk-ico">💻</div>
-          <div class="sk-head">Languages</div>
-          <div class="pills">
-            <span class="pill">🐍 Python</span><span class="pill">☕ Java</span><span class="pill">⚡ C++</span>
+
+        <!-- Languages -->
+        <div class="reveal">
+          <div class="skill-category-title">💻 Languages</div>
+          <div class="skill-icons-row">
+            <div class="skill-icon-card">
+              <i class="devicon-python-plain colored"></i>
+              <span class="skill-label">Python</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-java-plain colored"></i>
+              <span class="skill-label">Java</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-cplusplus-plain colored"></i>
+              <span class="skill-label">C++</span>
+            </div>
           </div>
         </div>
-        <div class="sk-box reveal">
-          <div class="sk-ico">🌐</div>
-          <div class="sk-head">Web Technologies</div>
-          <div class="pills">
-            <span class="pill">📄 HTML</span><span class="pill">🎨 CSS</span><span class="pill">⚙️ JavaScript</span>
+
+        <!-- Web Technologies -->
+        <div class="reveal">
+          <div class="skill-category-title">🌐 Web Technologies</div>
+          <div class="skill-icons-row">
+            <div class="skill-icon-card">
+              <i class="devicon-html5-plain colored"></i>
+              <span class="skill-label">HTML5</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-css3-plain colored"></i>
+              <span class="skill-label">CSS3</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-javascript-plain colored"></i>
+              <span class="skill-label">JavaScript</span>
+            </div>
           </div>
         </div>
-        <div class="sk-box reveal">
-          <div class="sk-ico">🛠️</div>
-          <div class="sk-head">Frameworks &amp; Tools</div>
-          <div class="pills">
-            <span class="pill">🎸 Django</span><span class="pill">🧪 Flask</span><span class="pill">🗄️ MySQL</span>
-            <span class="pill">🔀 Git</span><span class="pill">☁️ AWS</span><span class="pill">🐙 GitHub</span>
+
+        <!-- Frameworks & Tools -->
+        <div class="reveal">
+          <div class="skill-category-title">🛠️ Frameworks & Tools</div>
+          <div class="skill-icons-row">
+            <div class="skill-icon-card">
+              <i class="devicon-django-plain colored"></i>
+              <span class="skill-label">Django</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-flask-original colored"></i>
+              <span class="skill-label">Flask</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-mysql-plain colored"></i>
+              <span class="skill-label">MySQL</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-git-plain colored"></i>
+              <span class="skill-label">Git</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-github-original colored"></i>
+              <span class="skill-label">GitHub</span>
+            </div>
           </div>
         </div>
-        <div class="sk-box reveal">
-          <div class="sk-ico">☁️</div>
-          <div class="sk-head">Cloud Computing</div>
-          <div class="pills">
-            <span class="pill">🟠 AWS</span><span class="pill">🔵 Google Cloud</span><span class="pill">⎈ Kubernetes</span>
-            <span class="pill">🏗️ Cloud Architecting</span><span class="pill">📊 BigQuery</span>
+
+        <!-- Cloud Computing -->
+        <div class="reveal">
+          <div class="skill-category-title">☁️ Cloud Computing</div>
+          <div class="skill-icons-row">
+            <div class="skill-icon-card">
+              <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+              <span class="skill-label">AWS</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-googlecloud-plain colored"></i>
+              <span class="skill-label">Google Cloud</span>
+            </div>
+            <div class="skill-icon-card">
+              <i class="devicon-kubernetes-plain colored"></i>
+              <span class="skill-label">Kubernetes</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">🏗️</span>
+              <span class="skill-label">Cloud Arch.</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">📊</span>
+              <span class="skill-label">BigQuery</span>
+            </div>
           </div>
         </div>
-        <div class="sk-box reveal">
-          <div class="sk-ico">🧠</div>
-          <div class="sk-head">Core Competencies</div>
-          <div class="pills">
-            <span class="pill">📐 DSA</span><span class="pill">🧩 OOP</span><span class="pill">🗃️ DB Design</span>
+
+        <!-- Core Competencies -->
+        <div class="reveal">
+          <div class="skill-category-title">🧠 Core Competencies</div>
+          <div class="skill-icons-row">
+            <div class="skill-icon-card">
+              <span class="skill-emoji">📐</span>
+              <span class="skill-label">DSA</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">🧩</span>
+              <span class="skill-label">OOP</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">🗃️</span>
+              <span class="skill-label">DB Design</span>
+            </div>
           </div>
         </div>
-        <div class="sk-box reveal">
-          <div class="sk-ico">🤝</div>
-          <div class="sk-head">Soft Skills</div>
-          <div class="pills">
-            <span class="pill">🧩 Problem Solving</span><span class="pill">🔄 Adaptability</span>
-            <span class="pill">💬 Communication</span><span class="pill">👥 Team Player</span>
+
+        <!-- Soft Skills -->
+        <div class="reveal">
+          <div class="skill-category-title">🤝 Soft Skills</div>
+          <div class="skill-icons-row">
+            <div class="skill-icon-card">
+              <span class="skill-emoji">🧩</span>
+              <span class="skill-label">Problem Solving</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">🔄</span>
+              <span class="skill-label">Adaptability</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">💬</span>
+              <span class="skill-label">Communication</span>
+            </div>
+            <div class="skill-icon-card">
+              <span class="skill-emoji">👥</span>
+              <span class="skill-label">Team Player</span>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>

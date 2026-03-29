@@ -980,25 +980,52 @@
 ══════════════════════════════════════ */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .cert-card {
       background: var(--card);
       border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 1.3rem;
+      border-radius: 18px;
       display: flex;
-      gap: .9rem;
-      align-items: flex-start;
-      transition: all .2s;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all .28s cubic-bezier(.4,0,.2,1);
     }
 
     .cert-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-6px);
       border-color: var(--orange);
-      box-shadow: 0 8px 25px rgba(255, 106, 0, .12);
+      box-shadow: 0 14px 40px rgba(255, 106, 0, .15);
+    }
+
+    .cert-preview {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s;
+    }
+
+    .cert-card:hover .cert-preview img {
+      transform: scale(1.06);
+    }
+
+    .cert-body {
+      padding: 1.2rem 1.3rem;
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
     }
 
     .cert-ico {
@@ -1996,62 +2023,133 @@
       <div class="sec-kicker reveal">Credentials</div>
       <h2 class="sec-title reveal"><span>Certifications</span></h2>
       <div class="certs-grid">
+
+        <a href="cert-oracle-1.png" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
+          <div class="cert-preview">
+            <img src="cert-oracle-1.png" alt="Oracle Data Platform 2025">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico" style="background: rgba(248, 0, 0, 0.1); color: #f80000;">🏛️</div>
+            <div>
+              <div class="cert-name">Oracle Data Platform 2025 Certified Foundations Associate</div>
+              <div class="cert-iss">Oracle University</div>
+              <div class="cert-dt">Mar 2026</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="cert-oracle-2.png" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
+          <div class="cert-preview">
+            <img src="cert-oracle-2.png" alt="Oracle Certified Foundations Associate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico" style="background: rgba(248, 0, 0, 0.1); color: #f80000;">🏛️</div>
+            <div>
+              <div class="cert-name">Oracle Certified Foundations Associate</div>
+              <div class="cert-iss">Oracle University</div>
+              <div class="cert-dt">Mar 2026</div>
+            </div>
+          </div>
+        </a>
+
         <a href="https://drive.google.com/file/d/1mclqSCMGG0aPnOAdm-as5INMjs5cwZBq/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-aws">☁️</div>
-          <div>
-            <div class="cert-name">AWS Academy Graduate – Cloud Architecting</div>
-            <div class="cert-iss">AWS Academy</div>
-            <div class="cert-dt">Jan 2026</div>
+          <div class="cert-preview">
+            <img src="cert-aws.png" alt="AWS Cloud Architecting Certificate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-aws">☁️</div>
+            <div>
+              <div class="cert-name">AWS Academy Graduate – Cloud Architecting</div>
+              <div class="cert-iss">AWS Academy</div>
+              <div class="cert-dt">Jan 2026</div>
+            </div>
           </div>
         </a>
+
         <a href="https://www.credly.com/badges/722df5c5-30ec-4e9c-a8a1-5f12e3024fcb/public_url" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-gcp">🔵</div>
-          <div>
-            <div class="cert-name">Store, Process &amp; Manage Data – Command Line</div>
-            <div class="cert-iss">Google Cloud Skill Badge</div>
-            <div class="cert-dt">Jan 2026</div>
+          <div class="cert-preview">
+            <img src="cert-gcp-store.png" alt="Store Process Manage Data Badge">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-gcp">🔵</div>
+            <div>
+              <div class="cert-name">Store, Process & Manage Data – Command Line</div>
+              <div class="cert-iss">Google Cloud Skill Badge</div>
+              <div class="cert-dt">Jan 2026</div>
+            </div>
           </div>
         </a>
+
         <a href="https://www.credly.com/badges/60fac8f9-13e3-4d95-9e0a-0cc296cb88e8/public_url" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-gcp">🔵</div>
-          <div>
-            <div class="cert-name">Streaming Analytics into BigQuery</div>
-            <div class="cert-iss">Google Cloud Skill Badge</div>
-            <div class="cert-dt">Dec 2025</div>
+          <div class="cert-preview">
+            <img src="cert-gcp-streaming.png" alt="Streaming Analytics BigQuery Badge">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-gcp">🔵</div>
+            <div>
+              <div class="cert-name">Streaming Analytics into BigQuery</div>
+              <div class="cert-iss">Google Cloud Skill Badge</div>
+              <div class="cert-dt">Dec 2025</div>
+            </div>
           </div>
         </a>
+
         <a href="https://www.credly.com/badges/ae5ebd45-78f7-4fab-92cd-52440e673e01/public_url" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-gcp">🔵</div>
-          <div>
-            <div class="cert-name">Manage Kubernetes in Google Cloud</div>
-            <div class="cert-iss">Google Cloud Skill Badge</div>
-            <div class="cert-dt">Dec 2025</div>
+          <div class="cert-preview">
+            <img src="cert-gcp-kubernetes.png" alt="Manage Kubernetes Badge">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-gcp">🔵</div>
+            <div>
+              <div class="cert-name">Manage Kubernetes in Google Cloud</div>
+              <div class="cert-iss">Google Cloud Skill Badge</div>
+              <div class="cert-dt">Dec 2025</div>
+            </div>
           </div>
         </a>
+
         <a href="https://drive.google.com/file/d/1I3pWYTcQLUyr_ACY18nXt9R84k4_PE7B/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-np">🟠</div>
-          <div>
-            <div class="cert-name">Privacy &amp; Security in Online Social Media</div>
-            <div class="cert-iss">NPTEL Online Certification</div>
-            <div class="cert-dt">Apr 2025</div>
+          <div class="cert-preview">
+            <img src="cert-nptel.png" alt="NPTEL Privacy Security Certificate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-np">🟠</div>
+            <div>
+              <div class="cert-name">Privacy & Security in Online Social Media</div>
+              <div class="cert-iss">NPTEL Online Certification</div>
+              <div class="cert-dt">Apr 2025</div>
+            </div>
           </div>
         </a>
+
         <a href="https://drive.google.com/file/d/1G13E22-XUNBpD1YXJWl9RMTsjJhW2RYB/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-ot">💡</div>
-          <div>
-            <div class="cert-name">Object Oriented Programming</div>
-            <div class="cert-iss">IAM Neo Platform</div>
-            <div class="cert-dt">Dec 2024</div>
+          <div class="cert-preview">
+            <img src="cert-oop.png" alt="OOP Certificate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-ot">💡</div>
+            <div>
+              <div class="cert-name">Object Oriented Programming</div>
+              <div class="cert-iss">IAM Neo Platform</div>
+              <div class="cert-dt">Dec 2024</div>
+            </div>
           </div>
         </a>
+
         <a href="https://drive.google.com/file/d/1yeEBc4MXUE7zkTdmbS6Pyp4WDfl_kqWr/view?usp=drive_link" target="_blank" class="cert-card reveal" style="text-decoration:none;color:inherit">
-          <div class="cert-ico ico-ot">🎨</div>
-          <div>
-            <div class="cert-name">Responsive Web Designing</div>
-            <div class="cert-iss">freeCodeCamp</div>
-            <div class="cert-dt">Oct 2023</div>
+          <div class="cert-preview">
+            <img src="cert-rwd.png" alt="Responsive Web Design Certificate">
+          </div>
+          <div class="cert-body">
+            <div class="cert-ico ico-ot">🎨</div>
+            <div>
+              <div class="cert-name">Responsive Web Designing</div>
+              <div class="cert-iss">freeCodeCamp</div>
+              <div class="cert-dt">Oct 2023</div>
+            </div>
           </div>
         </a>
+
       </div>
     </div>
   </section>
